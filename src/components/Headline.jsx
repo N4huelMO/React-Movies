@@ -20,13 +20,17 @@ const Headline = () => {
   useEffect(() => {
     const getId = async () => {
       const resp = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=ce19d4644c7d787dd26c825fb8b72580&language=en-US&page=1"
+        `${import.meta.env.VITE_API_URL}/movie/popular?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US&page=1`
       );
 
       const id = resp.data.results[0].id;
 
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=ce19d4644c7d787dd26c825fb8b72580&language=en-US`
+        `${import.meta.env.VITE_API_URL}/movie/${id}?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US`
       );
 
       setMovie(data);

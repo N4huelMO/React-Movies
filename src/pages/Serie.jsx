@@ -20,7 +20,9 @@ const Serie = () => {
   useEffect(() => {
     const getMovie = async () => {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/tv/${serieId}?api_key=ce19d4644c7d787dd26c825fb8b72580&language=en-US`
+        `${import.meta.env.VITE_API_URL}/tv/${serieId}?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US`
       );
 
       setSerie(data);

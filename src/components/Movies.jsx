@@ -23,7 +23,9 @@ const Movies = () => {
   useEffect(() => {
     const getMovies = async () => {
       const { data } = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=ce19d4644c7d787dd26c825fb8b72580&language=en-US&page=1"
+        `${import.meta.env.VITE_API_URL}/movie/popular?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US&page=1`
       );
 
       setMovies(data.results);
@@ -31,7 +33,9 @@ const Movies = () => {
 
     const getComingSoon = async () => {
       const { data } = await axios.get(
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=ce19d4644c7d787dd26c825fb8b72580&language=en-US&page=1&region=US"
+        `${import.meta.env.VITE_API_URL}/movie/upcoming?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US&page=1&region=US`
       );
 
       setComingSoong(data.results.slice(0, 6));

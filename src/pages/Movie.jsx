@@ -21,7 +21,9 @@ const Movie = () => {
   useEffect(() => {
     const getMovie = async () => {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=ce19d4644c7d787dd26c825fb8b72580&language=en-US`
+        `${import.meta.env.VITE_API_URL}/movie/${movieId}?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US`
       );
 
       setMovie(data);
@@ -29,7 +31,9 @@ const Movie = () => {
 
     const getCast = async () => {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=ce19d4644c7d787dd26c825fb8b72580&language=en-US`
+        `${import.meta.env.VITE_API_URL}/movie/${movieId}/credits?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US`
       );
 
       setCasting(data);

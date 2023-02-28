@@ -15,7 +15,9 @@ const TvShows = () => {
   useEffect(() => {
     const getTvShows = async () => {
       const { data } = await axios.get(
-        "https://api.themoviedb.org/3/tv/top_rated?api_key=ce19d4644c7d787dd26c825fb8b72580&language=en-US&page=1"
+        `${import.meta.env.VITE_API_URL}/tv/top_rated?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US&page=1`
       );
 
       setTvShows(data.results);
