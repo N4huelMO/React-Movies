@@ -59,7 +59,7 @@ const TvShows = () => {
                 className="rounded-lg object-cover transition-all duration-300 hover:brightness-125 scale-95 hover:scale-100"
                 src={`${
                   serie.poster_path &&
-                  `http://image.tmdb.org/t/p/w780/${serie.poster_path}`
+                  `https://image.tmdb.org/t/p/w780/${serie.poster_path}`
                 }`}
                 alt="serieimage"
               />

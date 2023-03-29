@@ -67,7 +67,7 @@ const Movies = () => {
                   <Img
                     src={`${
                       movie.poster_path &&
-                      `http://image.tmdb.org/t/p/w780/${movie.poster_path}`
+                      `https://image.tmdb.org/t/p/w780/${movie.poster_path}`
                     }`}
                     alt="image"
                   />
