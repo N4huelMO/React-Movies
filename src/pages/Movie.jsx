@@ -81,10 +81,10 @@ const Movie = () => {
             <div className="sm:ml-4 mt-6">
               <h2 className="text-4xl font-semibold">{title}</h2>
               <div className="flex">
-                {genres?.map((genre, i) => (
+                {genres?.slice(0, 4).map((genre, i) => (
                   <h4 key={genre.id} className="flex mr-1 mt-2">
                     {genre.name}
-                    {i === genres.length - 1 ? "" : ","}
+                    {i === genres.slice(0, 4).length - 1 ? "" : ","}
                   </h4>
                 ))}
               </div>
