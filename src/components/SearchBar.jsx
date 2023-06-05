@@ -28,10 +28,10 @@ const SearchBar = () => {
       <div
         className={`w-4/6 mx-auto ${
           paramsLength == 0 ? "lg:flex" : "hidden"
-        } flex-col items-center my-auto hidden`}
+        } flex-col items-center my-auto`}
       >
-        <div className="flex justify-center items-center w-full">
-          <form className="relative flex items-center w-full h-12 rounded-full bg-white overflow-hidden">
+        <div className="relative flex justify-center items-center w-full">
+          <form className="flex items-center w-full h-12 rounded-full bg-white overflow-hidden">
             <div className="flex w-full h-full">
               <div className="flex justify-center items-center h-full w-12 text-gray-300">
                 <BiSearch className="w-7 h-7" />
@@ -48,14 +48,14 @@ const SearchBar = () => {
             </div>
           </form>
 
-          <div className="text-black top-20 absolute cursor-pointer lg:w-[20rem] xl:w-[29rem] 2xl:w-[39rem]">
+          <div className="text-black top-12 absolute cursor-pointer w-[calc(100%_-_3rem)]">
             {filter.map((movie) => (
               <Link
                 key={movie.id}
                 to={`${
                   movie.media_type === "tv"
-                    ? `serie/${movie.id}`
-                    : `movie/${movie.id}`
+                    ? `/series/${movie.id}`
+                    : `/movie/${movie.id}`
                 }`}
               >
                 <p className="px-2 py-1 bg-gray-100 hover:bg-gray-200 border-b-2 last:border-b-0">
