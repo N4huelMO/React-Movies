@@ -28,7 +28,7 @@ const SearchBar = () => {
       <div
         className={`w-4/6 mx-auto ${
           paramsLength == 0 ? "lg:flex" : "hidden"
-        } flex-col items-center my-auto`}
+        } flex-col items-center my-auto hidden`}
       >
         <div className="relative flex justify-center items-center w-full">
           <form className="flex items-center w-full h-12 rounded-full bg-white overflow-hidden">
