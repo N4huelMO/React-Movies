@@ -13,3 +13,7 @@ html {
   background-color: rgb(167 139 250);
   padding: 6px;
 }
+
+* {
+  scrollbar-gutter: stable;
+}
